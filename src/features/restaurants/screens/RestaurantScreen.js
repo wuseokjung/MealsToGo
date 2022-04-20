@@ -9,7 +9,7 @@ export const RestaurantsScreen = () => (
 			<Searchbar
 				style={styles.searchBar}
 				inputStyle={styles.searchText}
-				placeholder="what's goods"
+				placeholder="what's good"
 				iconColor="green"
 			/>
 		</View>

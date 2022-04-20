@@ -11,7 +11,6 @@ const Title = styled.Text`
 
 const ResCard = styled(Card)`
 	background-color: white;
-	border-radius: 10;
 `;
 
 const CardCover = styled(Card.Cover)`
