@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import { StyleSheet } from 'react-native';
 import { Card } from 'react-native-paper';
 
 //Kind of like CSS
 const Title = styled.Text`
 	padding: 16px;
-	color: green;
+	font-family: theme.body;
 `;
 
 const ResCard = styled(Card)`
@@ -14,7 +13,7 @@ const ResCard = styled(Card)`
 `;
 
 const CardCover = styled(Card.Cover)`
-	padding: 20px;
+	padding: 16px;
 	background-color: white;
 `;
 
