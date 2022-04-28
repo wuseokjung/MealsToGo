@@ -1,36 +1,59 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import { Searchbar } from 'react-native-paper';
+import { StatusBar, FlatList, SafeAreaView, StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
+
 import { RestaurantInfo } from '../components/infoCard';
+import { Spacer } from '../../../components/spacer/spacer.component';
+
+const SafeArea = styled(SafeAreaView)`
+	flex: 1;
+	${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
+`;
+
+const SearchContainer = styled.View`
+	padding: ${(props) => props.theme.space[3]};
+`;
 
 export const RestaurantsScreen = () => (
-	<SafeAreaView style={styles.container}>
-		<View style={styles.search}>
+	<SafeArea>
+		<SearchContainer>
 			<Searchbar
 				style={styles.searchBar}
 				inputStyle={styles.searchText}
 				placeholder="what's good"
 				iconColor="green"
 			/>
-		</View>
-		<View style={styles.list}>
-			<RestaurantInfo />
-		</View>
-	</SafeAreaView>
+		</SearchContainer>
+		<FlatList
+			data={[
+				{ name: 1 },
+				{ name: 2 },
+				{ name: 3 },
+				{ name: 4 },
+				{ name: 5 },
+				{ name: 6 },
+				{ name: 7 },
+				{ name: 8 },
+				{ name: 9 },
+				{ name: 10 },
+				{ name: 11 },
+				{ name: 12 },
+				{ name: 13 },
+				{ name: 14 },
+			]}
+			renderItem={() => (
+				<Spacer position="bottom" size="large">
+					<RestaurantInfo />
+				</Spacer>
+			)}
+			keyExtractor={(item) => item.name}
+			contentContainerStyle={{ padding: 16 }}
+		/>
+	</SafeArea>
 );
 
 const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		marginTop: StatusBar.currentHeight,
-	},
-	search: {
-		padding: 15,
-	},
-	list: {
-		flex: 1,
-		padding: 15,
-	},
 	searchBar: {
 		borderRadius: 20,
 	},
