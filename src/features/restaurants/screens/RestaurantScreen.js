@@ -15,6 +15,12 @@ const SearchContainer = styled.View`
 	padding: ${(props) => props.theme.space[3]};
 `;
 
+const ResList = styled(FlatList).attrs({
+	contentContainerStyle: {
+		padding: 16,
+	},
+})``;
+
 export const RestaurantsScreen = () => (
 	<SafeArea>
 		<SearchContainer>
@@ -25,7 +31,7 @@ export const RestaurantsScreen = () => (
 				iconColor="green"
 			/>
 		</SearchContainer>
-		<FlatList
+		<ResList
 			data={[
 				{ name: 1 },
 				{ name: 2 },
@@ -48,7 +54,6 @@ export const RestaurantsScreen = () => (
 				</Spacer>
 			)}
 			keyExtractor={(item) => item.name}
-			contentContainerStyle={{ padding: 16 }}
 		/>
 	</SafeArea>
 );
