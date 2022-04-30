@@ -23,7 +23,7 @@ export const RestaurantsScreen = () => (
 			<Searchbar
 				style={styles.searchBar}
 				inputStyle={styles.searchText}
-				placeholder="what's good"
+				placeholder="search anything food"
 				iconColor="green"
 			/>
 		</SearchContainer>
